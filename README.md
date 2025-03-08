@@ -1,54 +1,93 @@
-# React + TypeScript + Vite
+# Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple task management application built using React and Redux.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+To get started with this project, follow these steps:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clone the repository**:
+`https://github.com/saynegrojas/task-manager.git`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Install dependencies**:
+`npm install`
+ 
+1. **Start the application**:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+The app will be available at [http://localhost:5173](http://localhost:5173).
+
+---
+
+## Features
+
+- **Task Creation**: Users can create new tasks by filling out a form with the task's title, description, and status.
+- **Task Completion Update**: Existing tasks can be edited by clicking on them and marks tasks as complete.
+- **Task Deletion**: Tasks can be deleted by clicking on the "Delete" button next to each task.
+- **Toggle Theme**: Toggle between light and dark mode themes.
+
+---
+
+## Usage
+
+To use this application:
+
+1. Navigate to the root directory of the project.
+2. Start the development server using `npm run dev`.
+3. Open your browser and go to [http://localhost:5173](http://localhost:5173).
+
+You can interact with the app by:
+- Creating new tasks using the input field.
+- Deleting tasks by clicking on the "Delete" button next to each task.
+- Mark tasks as complete by clicking on the task name.
+- Click the theme button to switch from light to dark mode.
+
+---
+
+## API Documentation
+
+The following APIs are available for managing tasks:
+
+### 1. `Create a new task`
+
+- **Parameters**:
+- `text` (string): The text of the task.
+- `status` (boolean): The status of the task (e.g., "Completed").
+- get stored in localstorage.
+- **Returns**: The newly created task object.
+
+---
+
+### 2. `Mark an existing task as complete`
+
+- **Parameters**: 
+- `id` (string): The id of the task.
+- updates the status of the task as complete in localstorage.
+- **Returns**: An array of task objects.
+
+---
+
+### 3. `Delete a task by its ID`
+
+- **Parameters**:
+- `id` (string): The ID of the task to delete.
+- removes the task from localstorage.
+- **Returns**: None.
+
+---
+
+### 3. `Toggle theme`
+
+- **Parameters**:
+- (): Toggle theme between light and dark mode.
+- Persists theme in localstorage, even after refreshing the page.
+- **Returns**: None.
