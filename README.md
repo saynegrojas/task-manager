@@ -41,9 +41,8 @@ The app will be available at [http://localhost:5173](http://localhost:5173).
 
 To use this application:
 
-1. Navigate to the root directory of the project.
-2. Start the development server using `npm run dev`.
-3. Open your browser and go to [http://localhost:5173](http://localhost:5173).
+1. Start the development server using `npm run dev`.
+2. Open your browser and go to [http://localhost:5173](http://localhost:5173).
 
 You can interact with the app by:
 - Creating new tasks using the input field.
@@ -85,7 +84,7 @@ The following APIs are available for managing tasks:
 
 ---
 
-### 3. `Toggle theme`
+### 4. `Toggle theme`
 
 - **Parameters**:
 - (): Toggle theme between light and dark mode.
